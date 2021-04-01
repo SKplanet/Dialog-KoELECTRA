@@ -1,0 +1,18 @@
+{
+    "learning_rate": {
+        "_type": "choice",
+        "_value": [3e-5, 4e-5, 5e-5, 6e-5, 7e-5]
+    },
+    "warmup_proportion": {
+        "_type": "choice",
+        "_value": [0, 0.05, 0.1]
+    },
+    "adam_epsilon": {
+        "_type": "choice",
+        "_value": [1e-8, 1e-7, 1e-6]
+    },
+    "weight_decay": {
+        "_type": "choice",
+        "_value": [0.0, 0.01]
+    }
+}

@@ -1,0 +1,19 @@
+authorName: Kim Wonchul
+experimentName: dialog-koelectra_fintune
+trialConcurrency: 1
+maxExecDuration: 120h
+maxTrialNum: 90
+trainingServicePlatform: local
+searchSpacePath: search-1.json
+useAnnotation: false
+tuner:
+  builtinTunerName: TPE
+  classArgs:
+    optimize_mode: maximize
+trial:
+  codeDir: /Users/1004674/project/nlu-server/tools/dialog_electra/finetune/
+  command: python3 finetune.py --config_file /Users/1004674/project/nlu-server/tools/dialog_electra/finetune/conf/hate-speech/electra-small.yaml --do_nni
+  gpuNum: 1
+localConfig:
+  maxTrialNumPerGpu: 1
+  useActiveGpu: true

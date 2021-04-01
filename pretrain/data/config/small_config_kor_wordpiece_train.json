@@ -1,0 +1,17 @@
+{
+  "vocab_size": 40000,
+  "num_train_steps": 700000,
+  "save_checkpoints_steps": 10000,
+  "train_batch_size": 512,
+  "learning_rate": 1e-4,
+  "max_seq_length": 128,
+  "model_hparam_overrides":{
+      "max_position_embeddings":128
+  },
+  "generator_hidden_size": 1.0,
+  "model_size":"small",
+  "hidden_size": 256,
+  "tokenizer_type":"wordpiece",
+  "vocab_file":"data/vocab/vocab.txt",
+  "saved_model":""
+}
