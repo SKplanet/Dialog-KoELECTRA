@@ -226,7 +226,7 @@ As a result of the experiment, it showed better performance than a vocabulary di
 
 For help or issues using Dialog-KoELECTRA, please submit a [GitHub issue](https://github.com/skplanetml/Dialog-KoELECTRA/issues).
 
-For personal communication related to Dialog-KoELECTRA, please contact [Wonchul Kim](https://github.com/skplanetml) (`wonchul.kim@sk.com`).
+For personal communication related to Dialog-KoELECTRA, please contact [Wonchul Kim](https://github.com/krevas) (`wonchul.kim@sk.com`).
 
 <br>
 
