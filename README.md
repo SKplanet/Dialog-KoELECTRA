@@ -236,7 +236,7 @@ If you apply this library to any project and research, please cite our code:
 
 ```
 @misc{DialogKoELECTRA,
-  author       = {Okkyun Jeong and Junseok Kim and Wonchul Kim},
+  author       = {Wonchul Kim and Junseok Kim and Okkyun Jeong},
   title        = {Dialog-KoELECTRA: Korean conversational language model based on ELECTRA model},
   howpublished = {\url{https://github.com/skplanetml/Dialog-KoELECTRA}},
   year         = {2021},
