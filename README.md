@@ -22,6 +22,8 @@ The model was trained on Korean text. We hope to release other models, such as b
 | :---: | :---: | :---: | :---: | :---:  | :---: | :---:  | :---:  |
 | Dialog-KoELECTRA-Small | 12 | 256 | 14M | 128 | 1e-4 | 512 | 700K |
 
+<br>
+
 ### How to use from the transformers library
 
 The Dialog-KoELECTRA model is uploaded to the hugging face, so it is easy to use.
@@ -37,6 +39,8 @@ model = AutoModelForPreTraining.from_pretrained("skplanet/dialog-koelectra-small
 <br>
 
 If you want to download the model directly without using the transformers library, you can download it through the link below.
+
+<br>
 
 | Model | Pytorch-Generator | Pytorch-Discriminator | Tensorflow-v1 | ONNX |
 | :---: | :---: | :---: | :---: | :---: |
