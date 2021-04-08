@@ -234,6 +234,11 @@ As a result of the experiment, it showed better performance than a vocabulary di
 
 <br>
 
+## Examples
+- [Dialog-KoELECTRA Named Entity Recognition](https://share.streamlit.io/krevas/dialog-electra-ner)
+
+<br>
+
 ## References
 - [ELECTRA](https://github.com/google-research/electra): Pre-training Text Encoders as Discriminators Rather Than Generators.
 - [KoELECTRA](https://github.com/monologg/KoELECTRA): Pretrained ELECTRA Model for Korean
