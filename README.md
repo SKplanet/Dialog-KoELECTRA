@@ -234,7 +234,7 @@ As a result of the experiment, it showed better performance than a vocabulary di
 
 <br>
 
-## Examples
+## Demo
 - [Dialog-KoELECTRA Named Entity Recognition](https://share.streamlit.io/krevas/dialog-electra-ner)
 
 <br>
