@@ -1,4 +1,4 @@
-[![license](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://github.com/skplanetml/Dialog-KoELECTRA/blob/master/LICENSE)
+[![license](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://github.com/skplanet/Dialog-KoELECTRA/blob/master/LICENSE)
 
 
 # Dialog-KoELECTRA
@@ -247,7 +247,7 @@ As a result of the experiment, it showed better performance than a vocabulary di
 
 ## Contact Info
 
-For help or issues using Dialog-KoELECTRA, please submit a [GitHub issue](https://github.com/skplanetml/Dialog-KoELECTRA/issues).
+For help or issues using Dialog-KoELECTRA, please submit a [GitHub issue](https://github.com/skplanet/Dialog-KoELECTRA/issues).
 
 For personal communication related to Dialog-KoELECTRA, please contact [Wonchul Kim](https://github.com/krevas) (`wonchul.kim@sk.com`).
 
@@ -261,7 +261,7 @@ If you apply this library to any project and research, please cite our code:
 @misc{DialogKoELECTRA,
   author       = {Wonchul Kim and Junseok Kim and Okkyun Jeong},
   title        = {Dialog-KoELECTRA: Korean conversational language model based on ELECTRA model},
-  howpublished = {\url{https://github.com/skplanetml/Dialog-KoELECTRA}},
+  howpublished = {\url{https://github.com/skplanet/Dialog-KoELECTRA}},
   year         = {2021},
 }
 ```
@@ -270,7 +270,7 @@ If you apply this library to any project and research, please cite our code:
 
 ## License
 
-Dialog-KoELECTRA project is licensed under the [Apache License 2.0](https://github.com/skplanetml/Dialog-KoELECTRA/blob/master/LICENSE).
+Dialog-KoELECTRA project is licensed under the [Apache License 2.0](https://github.com/skplanet/Dialog-KoELECTRA/blob/master/LICENSE).
 
 ```
  Copyright 2020 ~ present SK Planet Co. RB Dialog solution
