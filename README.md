@@ -163,10 +163,54 @@ python3 run_finetune.py --config_file conf/hate-speech/electra-small.yaml
 
 Dialog-KoELECTRA shows strong performance in conversational downstream tasks.
 
-|               | **NSMC**<br/>(acc) | **Question Pair**<br/>(acc) | **Korean-Hate-Speech**<br/>(F1) | **Naver NER**<br/>(F1) | **KorNLI**<br/>(acc) | **KorSTS**<br/>(spearman) | 
-| :--------------------- | :----------------: | :--------------------: | :----------------: | :------------------: | :-----------------------: | :-------------------------: | 
-| DistilKoBERT           |       88.60        |            92.48          |                 60.72                 |      84.65          |        72.00         |           72.59           |   
-| **Dialog-KoELECTRA-Small** |     **90.01**      |           **94.99**             |               **68.26**               |  **85.51**         |      **78.54**       |         **78.96**         |    
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center" colspan="3">Dialog</th>
+<th style="text-align:center" colspan="3">Written</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"><strong>NSMC (acc)</strong></td>
+<td style="text-align:center"><strong>Question Pair (acc)</strong></td>
+<td style="text-align:center"><strong>Korean-Hate-Speech (F1)</strong></td>
+<td style="text-align:center"><strong>Naver NER (F1)</strong></td>
+<td style="text-align:center"><strong>KorNLI (acc)</strong></td>
+<td style="text-align:center"><strong>KorSTS (spearman)</strong></td>
+</tr>
+<tr>
+<td style="text-align:center">DistilKoBERT</td>
+<td style="text-align:center">88.60</td>
+<td style="text-align:center">92.48</td>
+<td style="text-align:center">60.72</td>
+<td style="text-align:center">84.65</td>
+<td style="text-align:center">72.00</td>
+<td style="text-align:center">72.59</td>
+</tr>
+<tr>
+<td style="text-align:center">KoELECTRA-Small</td>
+<td style="text-align:center">89.36</td>
+<td style="text-align:center">94.85</td>
+<td style="text-align:center">63.07</td>
+<td style="text-align:center">85.40</td>
+<td style="text-align:center"><strong>78.60</strong></td>
+<td style="text-align:center"><strong>80.79</strong></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>Dialog-KoELECTRA-Small</strong></td>
+<td style="text-align:center"><strong>90.01</strong></td>
+<td style="text-align:center"><strong>94.99</strong></td>
+<td style="text-align:center"><strong>68.26</strong></td>
+<td style="text-align:center"><strong>85.51</strong></td>
+<td style="text-align:center">78.54</td>
+<td style="text-align:center">78.96</td>
+</tr>
+</tbody>
+</table>
+
 
 <br>
 
