@@ -50,14 +50,14 @@ If you want to download the model directly without using the transformers librar
 
 ## Model Performance
 
-Dialog-KoELECTRA shows strong performance in conversational downstream tasks.
+Dialog-KoELECTRA shows strong performance in colloquial data downstream tasks.
 
 <table>
 <thead>
 <tr>
 <th style="text-align:center"></th>
-<th style="text-align:center" colspan="3">Dialog</th>
-<th style="text-align:center" colspan="3">Written</th>
+<th style="text-align:center" colspan="3">Colloquial data</th>
+<th style="text-align:center" colspan="3">Written data</th>
 </tr>
 </thead>
 <tbody>
