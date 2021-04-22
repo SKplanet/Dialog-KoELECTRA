@@ -29,7 +29,7 @@ Dialog-KoELECTRA 모델은 22GB의 대화체 및 문어체 한글 텍스트 데�
 
 ## 모델 배포
 
-서비스에 적합한 small 버전을 먼저 출시하였습니다. 향후 base 모델 등 다른 모델도 출시 할 예정입니다.
+서비스에 적합한 small 버전을 먼저 출시하였고 향후 base 모델 등 다른 모델도 출시 할 예정입니다. <br>
 아래 두가지 방법을 통해 학습된 모델을 받아 사용할 수 있습니다.
 
 | Model | Layers | Hidden Size | Params | Max<br/>Seq Len | Learning<br/>Rate | Batch Size | Train Steps  | Train Time |
