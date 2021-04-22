@@ -260,7 +260,7 @@ python3 build_pretraining_dataset.py \
 
 * `--data_dir`: 사전 훈련 데이터, 모델 가중치 등이 저장되는 디렉토리
 * `--model_name`: 훈련중인 모델의 이름. 모델 가중치는 기본적으로`<data-dir> / models / <model-name>`에 저장
-* `--hparams` (optional): 모델 매개 변수, 데이터 경로 등을 포함하는 JSON 파일 경로 (지원되는 매개 변수는`configure_pretraining.py`를 참조하세요.)
+* `--hparams` (optional): 모델 매개 변수, 데이터 경로 등을 포함하는 JSON 파일 경로 (지원되는 매개 변수는`configure_pretraining.py` 참조)
 * `--use_tpu` (optional): 모델을 훈련 할 때 tpu를 사용하는 옵션
 * `--mixed_precision` (optional): 모델 훈련시 혼합 정밀도를 사용할지 여부에 대한 옵션
 
