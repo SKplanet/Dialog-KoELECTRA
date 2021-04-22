@@ -1,7 +1,7 @@
 [![license](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://github.com/skplanet/Dialog-KoELECTRA/blob/master/LICENSE)
 
 
-# Dialog-KoELECTRA 언어모델
+# 한국어 대화체 언어모델 (Dialog-KoELECTRA)
 
 <br>
 
