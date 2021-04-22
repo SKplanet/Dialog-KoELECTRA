@@ -118,7 +118,7 @@ Transformers 라이브러리를 사용하지 않고 직접 모델을 다운로�
 
 <br>
 
-## 학습데이터
+## 학습 데이터
 
 
 <table class="tg">
@@ -158,9 +158,9 @@ Transformers 라이브러리를 사용하지 않고 직접 모델을 다운로�
 <br>
 
 
-## Vocabulary
+## 어휘 사전
 
-어휘 사전 생성시 [huggingface_konlpy](https://github.com/lovit/huggingface_konlpy)를 이용한 형태소 분석을 적용했습니다.
+어휘 사전 생성시 [huggingface_konlpy](https://github.com/lovit/huggingface_konlpy)를 이용한 형태소 분석을 적용했습니다.<br>
 실험 결과, 형태소 분석을 적용하지 않고 만든 어휘 사전보다 더 나은 성능을 보였습니다.
 <table>
 <thead>
@@ -193,7 +193,7 @@ Transformers 라이브러리를 사용하지 않고 직접 모델을 다운로�
 
 #### 1. 전처리
 
-데이터 전처리를 하려면`preprocess.py`를 사용하세요. 데이터 전처리는 반복되는 문자를 축약하고 한자를 제거하는 작업을 수행합니다.
+`preprocess.py`를 사용하여 데이터 전처리를 수행합니다. 데이터 전처리는 반복되는 문자를 축약하고 한자를 제거하는 작업을 수행합니다.
 
 * `--corpus_dir`: 텍스트 파일을 포함하는 디렉토리
 * `--output_file`: 전처리 후 생성 되는 파일명
@@ -211,7 +211,7 @@ python3 preprocess.py \
 `build_vocab.py`를 사용하여 텍스트 데이터에서 어휘 파일을 만듭니다.
 
 * `--corpus`: 어휘 파일로 변환 할 텍스트 파일
-* `--tokenizer`: wordpiece / mecab_wordpiece와 같은 토크나이저의 이름 (기본값 : wordpiece)
+* `--tokenizer`: wordpiece / mecab_wordpiece와 같은 토크나이저 (기본값 : wordpiece)
 * `--vocab_size`: 어휘사전 단어 수 (기본값 : 40000)
 * `--min_frequency`: 토큰 페어가 병합 작업을 수행하는데 필요한 최소 빈도 (기본값 : 3)
 * `--limit_alphabet`: 병합을 계산하기 전에 보관할 수있는 초기 토큰 수 (기본값 : 6000)
@@ -231,7 +231,7 @@ python3 build_vocab.py \
 ---
 #### 3. tfrecord 생성
 
-사전학습을 위한 tfrecord를 만들려면`build_pretraining_dataset.py`를 사용하세요.
+`build_pretraining_dataset.py`를 사용하여 사전학습을 위한 tfrecord를 생성합니다.
 
 * `--corpus_dir`: tfrecord로 전환 할 텍스트 파일이 포함 된 디렉토리
 * `--vocab_file`: build_vocab.py을 통해 만든 어휘 파일
@@ -240,7 +240,7 @@ python3 build_vocab.py \
 * `--num_processes`: 프로세스 병렬화 개수 (기본값 : 1)
 * `--blanks-separate-docs`: 빈 줄이 문서 경계를 나타내는 지 여부 (기본값 : False)
 * `--do-lower-case/--no-lower-case`: 입력 텍스트의 소문자 여부 (기본값 : False)
-* `--tokenizer_type`: wordpiece / mecab_wordpiece와 같은 토크나이저의 이름 (기본값 : wordpiece)
+* `--tokenizer_type`: wordpiece / mecab_wordpiece와 같은 토크나이저 (기본값 : wordpiece)
 
 실행 예시
 ```python
