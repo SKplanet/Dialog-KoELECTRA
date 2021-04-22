@@ -13,15 +13,15 @@
 Dialog-KoELECTRA 모델은 22GB의 대화체 및 문어체 한글 텍스트 데이터로 훈련되었습니다. Dialog-KoELECTRA 모델은 [ELECTRA](https://openreview.net/pdf?id=r1xMH1BtvB) 모델을 기반으로 만들어졌습니다. ELECTRA는 자가지도 언어 표현 학습 방법으로 비교적 적은 계산을 사용하여 사전 언어 모델을 훈련할 수 있습니다. ELECTRA 모델은 [GAN](https://arxiv.org/pdf/1406.2661.pdf)과 유사하게 생성자가 생성한 "가짜" 입력 토큰과 "실제" 입력 토큰을 판별자가 구별하도록 훈련되었습니다. ELECTRA는 단일 GPU에서 학습했을 때도 강력한 결과를 얻을 수 있는 장점을 가지고 있습니다.
 
 ### 모델 차별점
-* 최적의 어휘 사전 생성
+* **최적의 어휘 사전 생성**
 	- 여러 파라미터 값 조합 실험을 통해 어휘 사전 생성시 최적의 값으로 설정
-* 최적의 대화체/문어체 데이터 비율 구성
+* **최적의 대화체/문어체 데이터 비율 구성**
 	- 대화체와 문어체 데이터 비율 조합을 통해 대화체 성능 향상
-* 형태소 분석 기반 토크나이저 사용
+* **형태소 분석 기반 토크나이저 사용**
 	- 한글 처리에 적합한 형태소 분석 결과를 subword 기반의 tokenizer 입력으로 사용하여 어휘 사전 생성
-* 사전 학습시 mixed precision 적용
+* **사전 학습시 mixed precision 적용**
 	- 사전 훈련 중에 mixed precision 옵션을 사용하여 학습 속도 향상 및 메모리 절약
-* fine-tuning시 NNI 옵션 사용 가능
+* **fine-tuning시 NNI 옵션 사용 가능**
 	- 모델 fine-tuning시 [NNI](https://github.com/microsoft/nni) 옵션을 사용하여 파라미터 최적화가 가능
 
 
