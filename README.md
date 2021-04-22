@@ -27,9 +27,10 @@ Dialog-KoELECTRA 모델은 22GB의 대화체 및 문어체 한글 텍스트 데�
 
 <br>
 
-## Released Models
+## 모델 배포
 
 서비스에 적합한 small 버전을 먼저 출시하였습니다. 향후 base 모델 등 다른 모델도 출시 할 예정입니다.
+아래 두가지 방법을 통해 학습된 모델을 받아 사용할 수 있습니다.
 
 | Model | Layers | Hidden Size | Params | Max<br/>Seq Len | Learning<br/>Rate | Batch Size | Train Steps  | Train Time |
 | :---: | :---: | :---: | :---: | :---:  | :---: | :---:  | :---:  | :---: | 
@@ -37,7 +38,7 @@ Dialog-KoELECTRA 모델은 22GB의 대화체 및 문어체 한글 텍스트 데�
 
 <br>
 
-### transformers 라이브러리를 통한 사용법
+### 1. transformers 라이브러리
 
 Dialog-KoELECTRA 모델은 Hugging Face에 업로드되어 있어 쉽게 사용 가능합니다.
 
@@ -52,6 +53,7 @@ model = ElectraForSequenceClassification.from_pretrained("skplanet/dialog-koelec
 
 <br>
 
+### 2. 직접 다운로드
 Transformers 라이브러리를 사용하지 않고 직접 모델을 다운로드하려면 아래 링크를 통해 다운로드 할 수 있습니다.
 
 
@@ -189,6 +191,8 @@ Transformers 라이브러리를 사용하지 않고 직접 모델을 다운로�
 ## 코드 사용 방법
 ### Pre-training
 
+#### 1. 전처리
+
 데이터 전처리를 하려면`preprocess.py`를 사용하세요. 데이터 전처리는 반복되는 문자를 축약하고 한자를 제거하는 작업을 수행합니다.
 
 * `--corpus_dir`: 텍스트 파일을 포함하는 디렉토리
@@ -202,6 +206,7 @@ python3 preprocess.py \
 ```
 
 ---
+#### 2. 어휘 사전 생성
 
 `build_vocab.py`를 사용하여 텍스트 데이터에서 어휘 파일을 만듭니다.
 
@@ -224,6 +229,7 @@ python3 build_vocab.py \
 ```
 
 ---
+#### 3. tfrecord 생성
 
 사전학습을 위한 tfrecord를 만들려면`build_pretraining_dataset.py`를 사용하세요.
 
@@ -248,6 +254,7 @@ python3 build_pretraining_dataset.py \
 ```
 
 ---
+#### 4. 사전 학습 수행
 
 `run_pretraining.py`를 사용하여 사전 학습을 수행합니다.
 
@@ -267,6 +274,7 @@ python3 run_pretraining.py \
 ```
 
 ---
+#### 5. tf모델 -> pytorch모델 변환
 
 `pytorch_convert.py`를 사용하여 tf 모델을 pytorch 모델로 변환합니다.
 
