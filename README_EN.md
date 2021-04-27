@@ -29,8 +29,7 @@ The model was trained on Korean text. We hope to release other models, such as b
 The Dialog-KoELECTRA model is uploaded to the hugging face, so it is easy to use.
 
 ```python
-from transformers import ElectraTokenizer
-from transformers.modeling_electra import ElectraForSequenceClassification
+from transformers import ElectraTokenizer, ElectraForSequenceClassification
   
 tokenizer = ElectraTokenizer.from_pretrained("skplanet/dialog-koelectra-small-discriminator")
 
