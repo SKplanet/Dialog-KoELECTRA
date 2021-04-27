@@ -43,8 +43,7 @@ Dialog-KoELECTRA 모델은 22GB의 대화체 및 문어체 한글 텍스트 데�
 Dialog-KoELECTRA 모델은 Hugging Face에 업로드되어 있어 쉽게 사용 가능합니다.
 
 ```python
-from transformers import ElectraTokenizer
-from transformers.modeling_electra import ElectraForSequenceClassification
+from transformers import ElectraTokenizer, ElectraForSequenceClassification
   
 tokenizer = ElectraTokenizer.from_pretrained("skplanet/dialog-koelectra-small-discriminator")
 
