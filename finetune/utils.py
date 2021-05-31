@@ -1,12 +1,62 @@
 import random
-from numpy.lib.function_base import average
+import collections
+from typing import Any, Dict
 
 import torch
 import numpy as np
+import ruamel.yaml as yaml
+from ruamel.yaml import CLoader
 from scipy.stats import pearsonr, spearmanr
 from seqeval import metrics as seqeval_metrics
 from sklearn import metrics as sklearn_metrics
 
+def yaml_load(path_or_file):
+    if isinstance(path_or_file, str):
+        with open(path_or_file, 'r', encoding='utf-8') as f:
+            return yaml.load(f, Loader=CLoader)
+    else:
+        return yaml.load(path_or_file, Loader=CLoader)
+    
+def _nest_dict_rec(k: str, v: Any, out: Dict[str, Any], sep: str):
+    k, *rest = k.split(sep, 1)
+    if rest:
+        _nest_dict_rec(rest[0], v, out.setdefault(k, {}), sep)
+    else:
+        out[k] = v
+    
+def make_nested(flat: Dict[str, Any], sep: str='.') -> Dict[str, Any]:
+    result = {}
+    for k, v in flat.items():
+        _nest_dict_rec(k, v, result, sep)
+    return result
+
+def update(target: Dict[str, Any], source: Dict[str, Any]) -> Dict[str, Any]:
+    for k, v in source.items():
+        if isinstance(v, collections.abc.Mapping):
+            target[k] = update(target.get(k, {}), v)
+        else:
+            target[k] = v
+    return target
+
+def update_nested(nested_to: Dict[str, Any], flat_from: Dict[str, Any], sep: str='.'):
+    nested_from = make_nested(flat_from, sep=sep)
+    return update(nested_to, nested_from)
+
+def make_flat_dict(target: Dict[str, Any],
+                   parent_key="",
+                   ignore_key_fn=None,
+                   sep=".") -> Dict[str, Any]:
+    result = {}
+    for k, v in target.items():
+        if not ignore_key_fn is None and ignore_key_fn(k):
+            continue
+        cur_key = sep.join([p for p in [parent_key, k] if p])
+        if isinstance(v, collections.abc.Mapping):
+            result.update(make_flat_dict(v, cur_key, ignore_key_fn, sep))
+        else:
+            result.update({cur_key: v})
+
+    return result
 
 def set_seed(args):
     random.seed(args.seed)

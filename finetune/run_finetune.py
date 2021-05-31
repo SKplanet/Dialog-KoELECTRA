@@ -1,9 +1,7 @@
 import argparse
-import json
 import logging
 import os
 import glob
-import random
 
 import nni
 import numpy as np
@@ -39,9 +37,10 @@ from utils import (
     show_ner_report,
     set_seed,
     compute_metrics,
+    yaml_load,
+    update_nested, 
+    make_flat_dict,
 )
-from common.util.etc import update_nested, make_flat_dict
-from common.util import yaml
 
 logger = logging.getLogger()
 
@@ -478,7 +477,7 @@ if __name__ == "__main__":
     logger.setLevel(logging.INFO)
 
     with open(cli_args.config_file) as f:
-        train_conf = yaml.load(f)
+        train_conf = yaml_load(f)
 
     if cli_args.do_nni:
         nni_params = nni.get_next_parameter()
