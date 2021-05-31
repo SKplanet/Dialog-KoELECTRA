@@ -6,6 +6,7 @@ import glob
 import nni
 import numpy as np
 import torch
+import torch.nn as nn
 from torch.nn import CrossEntropyLoss
 from torch.utils.data import DataLoader, RandomSampler, SequentialSampler
 from fastprogress.fastprogress import master_bar, progress_bar
@@ -317,6 +318,19 @@ def evaluate(args, model, eval_dataset, mode, labels, global_step=None):
 
     return results, metric_name
 
+def init_layer(layers, top_n_layer=1):
+    param_names = []
+    num_layer = len(layers)
+    init_begin = num_layer - top_n_layer
+    for l in range(init_begin, num_layer):
+        for n, w in layers[l].named_parameters():
+            param_names.append(n)
+            if n.endswith(".bias"):
+                w.data.zero_()
+            elif "LayerNorm.weight" in n:
+                w.data.fill_(1.0)
+            else:
+                nn.init.xavier_uniform_(w.data)
 
 def main(cli_args):
     args = AttrDict(args)
@@ -373,6 +387,9 @@ def main(cli_args):
             args.model_name_or_path, config=config
         )
 
+    #Re-init
+    init_layer(model.electra.encoder.layer, top_n_layer=1)
+    
     # GPU or CPU
     args.device = "cuda" if torch.cuda.is_available() and not args.no_cuda else "cpu"
     model.to(args.device)
