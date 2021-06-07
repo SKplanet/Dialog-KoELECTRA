@@ -3,7 +3,7 @@
 
 # 한국어 대화체 언어모델 (Dialog-KoELECTRA)
 
-<br>
+![facebook_cover_photo_2](https://user-images.githubusercontent.com/81552845/120947334-460b1100-c77a-11eb-9074-9b6df53bdee4.png)
 
 ## 모델 소개
 
