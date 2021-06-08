@@ -333,10 +333,10 @@ def init_layer(layers, top_n_layer=1):
                 nn.init.xavier_uniform_(w.data)
 
 def main(cli_args):
-    args = AttrDict(args)
+    args = AttrDict(cli_args)
     logger.info("Training/evaluation parameters {}".format(args))
 
-    args.output_dir = os.path.join(args.ckpt_dir, cli_args.task)
+    args.output_dir = os.path.join(args.ckpt_dir, args.task)
 
     set_seed(args)
 
@@ -388,7 +388,8 @@ def main(cli_args):
         )
 
     #Re-init
-    init_layer(model.electra.encoder.layer, top_n_layer=1)
+    if args.do_reinit:
+        init_layer(model.electra.encoder.layer, top_n_layer=1)
     
     # GPU or CPU
     args.device = "cuda" if torch.cuda.is_available() and not args.no_cuda else "cpu"
@@ -488,6 +489,7 @@ if __name__ == "__main__":
 
     cli_parser.add_argument("--config_file", type=str, required=True)
     cli_parser.add_argument("--do_nni", action="store_true")
+    cli_parser.add_argument("--do_reinit", action="store_true")
 
     cli_args = cli_parser.parse_args()
 
@@ -503,4 +505,4 @@ if __name__ == "__main__":
 
     train_conf.update(vars(cli_args))
 
-    main(cli_args)
+    main(train_conf)
