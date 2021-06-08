@@ -291,10 +291,11 @@ python3 pytorch_convert.py \
 
 ## Fine-tuning
 
-`run_finetuning.py`를 사용하여 다운스트림 NLP 태스크에서 Dialog-KoELECTRA 모델을 미세 조정하고 평가합니다. 세 가지 인수가 필요합니다.
+`run_finetuning.py`를 사용하여 다운스트림 NLP 태스크에서 Dialog-KoELECTRA 모델을 미세 조정하고 평가합니다.
 
-* `--config_file`: 모델 하이퍼 파라미터, 데이터 경로 등을 포함하는 YAML 파일
-* `--nni`: 모델을 미세 조정할 때 nni를 사용할지 여부에 대한 옵션
+* `--config_file`: 모델 하이퍼 파라미터, 데이터 경로 등을 포함하는 YAML 파일 (필수)
+* `--do_nni`: 모델을 미세 조정할 때 nni를 사용할지 여부 (옵션)
+* `--do_reinit`: 모델을 미세 조정할 때 [re-init](https://arxiv.org/pdf/2006.05987.pdf)을 적용할지 여부 (옵션)
 
 실행 예시
 ```python
