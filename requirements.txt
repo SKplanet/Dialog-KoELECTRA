@@ -15,4 +15,4 @@ torch==1.7.0
 tqdm==4.52.0
 transformers==3.5.1
 mecab-python===0.996-ko-0.9.2
-huggingface-konlpy==0.1.0
+git+git://github.com/krevas/huggingface_konlpy
