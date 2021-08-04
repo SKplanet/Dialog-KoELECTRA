@@ -314,8 +314,6 @@ python3 run_finetune.py --config_file conf/hate-speech/electra-small.yaml
 
 Dialog-KoELECTRA 사용에 대한 도움이나 문제가 있는 경우 [GitHub issue](https://github.com/skplanet/Dialog-KoELECTRA/issues)에 올려주세요.
 
-Dialog-KoELECTRA와 관련된 개인적인 커뮤니케이션은 [wonchul.kim@sk.com](https://github.com/krevas)으로 연락 주시기 바랍니다.
-
 <br>
 
 ## Citation
